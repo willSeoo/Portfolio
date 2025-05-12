@@ -1,12 +1,13 @@
-// import { useState } from "react";
-import "./App.css";
+import React from "react";
+import Hero from "./sections/Hero";
 
-function App() {
-  return(
+
+const App = () => {
+  return (
     <div>
-      <h1>Portfolio</h1>
-    </div>
-  )
-}
+      <Hero />
+    </div> 
+  );
+};
 
 export default App;
