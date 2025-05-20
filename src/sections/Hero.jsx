@@ -1,21 +1,86 @@
 import React from "react";
 import { words } from "../constants/index.js";
+import Button from "../components/button.jsx";
+import Lanyard from "../components/Lanyard/Lanyard.jsx";
+import { Canvas } from "@react-three/fiber";
+import HeroExperience from "../components/HeroModels/HeroExperience.jsx";
+import { FlipWords } from "../components/FlipWords.jsx";
+import { motion } from "framer-motion";
+import Background from "../components/Background.jsx";
 
 const Hero = () => {
+  const kata = ["Secure", "Modern", "Scalable"];
+  const variants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
+      <Background />
+      ⁡⁢⁣⁢ {/* BACKGROUND Desktop */}⁡
+      <div className="absolute top-0 left-0 z-10 hidden custom-lg">
         <img src="/images/bg.png" alt="background" />
       </div>
+      
+      {/* ⁡⁢⁣⁢Mobile View⁡ */}
+      <div className="z-20 mt-20 text-center md:h-[25vh] lg:h-[40vh] md:mt-30 h-[30vh] rounded-3xl bg-clip-text hidden max-[1250px]:block relative">
+        <div className="flex flex-col space-y-6 relative z-20">
+          <motion.p
+            className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-medium"
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 1 }}
+          >
+            Hi, I'm Will
+          </motion.p>
 
-      <div className="hero-layout">
-        {/* left side hero content */}
+          <div>
+            <motion.p
+              className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-neutral-300"
+              variants={variants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 1.2 }}
+            >
+              I am Capable of Building
+            </motion.p>
+
+            <motion.div
+              variants={variants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 1.5 }}
+            >
+              <FlipWords
+                words={kata}
+                className="font-bold text-2xl sm:text-4xl md:text-6xl text-[#D3E674]"
+              />
+            </motion.div>
+
+            <motion.p
+              className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-neutral-300"
+              variants={variants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 1.8 }}
+            >
+              Web Applications
+            </motion.p>
+          </div>
+        </div>
+      </div>
+      
+      ⁡⁢⁣⁢ {/* DESKTOP VIEW */}⁡
+      <div className="hero-layout hidden min-[1250px]:flex flex-col justify-center items-center ">
+        {/* Left side hero content */}
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
-          <div className="flex flex-col gap-7 md:gap-100">
+          <div className="flex flex-col gap-7 ">
             <div className="hero-text">
               <h1>
                 Shaping
-                <span className="slide">
+                <span className="slide text-[#D3E674]">
                   <span className="wrapper">
                     {words.map((word) => (
                       <span
@@ -33,13 +98,26 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
-              <h1>into real project</h1>
-              <h1>that deliver result</h1>
+              <h1>into Real Project</h1>
+              <h1>that Deliver Result</h1>
             </div>
-             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">Hi, I'm will, a developer based in indonesia with passion for code.</p>
+            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none xl:left-12">
+              Hi, I'm <span className="text-white">Will</span>, a passionate
+              developer based in Medan, Indonesia.
+            </p>
+            <Button
+              className="md:w-80 md:h-16 w-60 h-12 xl:left-12"
+              id="button"
+              text="See my Work"
+            />
           </div>
         </header>
+        ⁡⁢⁣⁢{/* Right Side Landyard*/}⁡
+        <div className="hero-3d-layout hidden custom-lg xl:left-129">
+          <Lanyard position={[0, 0, 12.6]} gravity={[0, -46.6, 0]} />
+        </div>
       </div>
+     
     </section>
   );
 };
