@@ -135,7 +135,7 @@ section {
           }
 
           .underline {
-            @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full;
+            @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-[#D3E674] transition-all duration-300 group-hover:w-full;
           }
         }
       }
@@ -145,7 +145,7 @@ section {
       @apply flex;
 
       .inner {
-        @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
+        @apply px-5 py-2 rounded-lg bg-[#D3E674] text-black group-hover:bg-black-50  transition-colors duration-300;
 
         span {
           @apply group-hover:text-white transition-colors duration-300;
@@ -467,13 +467,110 @@ section {
   filter: saturate(200);
 }
 
+
 .card:hover::before {
   opacity: 1;
 }
 
 
-@media (min-width: 1250px) {
+
+@media (min-width: 1280px) {
   .custom-lg {
     display: block;
   }
 }
+
+
+@media (min-width: 1300px) {
+    .custom-ml {
+      margin-left: 5.4rem; /* Sama seperti Tailwind 'ml-10' */
+    }
+  }
+@media (min-width: 1400px) {
+    .custom-ml {
+      margin-left: 9%; /* Sama seperti Tailwind 'ml-10' */
+    }
+  }
+  
+  @media (min-width: 1650px) {
+      .custom-ml {
+        margin-left: 20%; /* Sama seperti Tailwind 'ml-10' */
+      }
+    }
+  
+  @media (min-width: 1800px) {
+      .custom-ml {
+        margin-left: 27%; /* Sama seperti Tailwind 'ml-10' */
+      }
+    }
+  
+  @media (min-width: 1920px) {
+      .custom-ml {
+        margin-left: 30.7%; /* Sama seperti Tailwind 'ml-10' */
+      }
+    }
+   
+  @media (min-width: 2200px) {
+      .custom-ml {
+        margin-left: 37%; /* Sama seperti Tailwind 'ml-10' */
+      }
+    }
+  @media (min-width: 2600px) {
+      .custom-ml {
+        margin-left: 40%; /* Sama seperti Tailwind 'ml-10' */
+      }
+    }
+  @media (min-width: 2820px) {
+      .custom-ml {
+        margin-left: 43%; /* Sama seperti Tailwind 'ml-10' */
+      }
+    }
+   
+  @media (min-width: 3000px) {
+      .custom-ml {
+        margin-left: 46%; /* Sama seperti Tailwind 'ml-10' */
+      }
+    }
+   
+  
+@media (min-width: 1450px) {
+    .custom-leftLandyard {
+      margin-left: 5rem; /* Sama seperti Tailwind 'ml-10' */
+    }
+  }
+@media (min-width: 1650px) {
+    .custom-leftLandyard {
+      margin-left: 8rem; /* Sama seperti Tailwind 'ml-10' */
+    }
+  }
+@media (min-width: 1850px) {
+    .custom-leftLandyard {
+      margin-left: 11rem; /* Sama seperti Tailwind 'ml-10' */
+    }
+  }
+@media (min-width: 1920px) {
+    .custom-leftLandyard {
+      margin-left: 9rem; /* Sama seperti Tailwind 'ml-10' */
+    }
+  }
+@media (min-width: 2200px) {
+    .custom-leftLandyard {
+      margin-left: 14rem; /* Sama seperti Tailwind 'ml-10' */
+    }
+  }
+@media (min-width: 2550px) {
+    .custom-leftLandyard {
+      margin-left: 23rem; /* Sama seperti Tailwind 'ml-10' */
+    }
+  }
+  
+@media (min-width: 2850px) {
+    .custom-leftLandyard {
+      margin-left: 26rem; /* Sama seperti Tailwind 'ml-10' */
+    }
+  }
+@media (min-width: 3000px) {
+    .custom-leftLandyard {
+      margin-left: 29rem; /* Sama seperti Tailwind 'ml-10' */
+    }
+  }

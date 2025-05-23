@@ -6,7 +6,7 @@ const Background = () => {
   return (
     <>
       {/* Mobile Background */}
-      <div className="absolute top-0 left-0 w-full h-full z-0 block min-[1250px]:hidden">
+      <div className="absolute top-0 left-0 w-full h-full z-0 block min-[1280px]:hidden">
         <Squares
           speed={0.2}
           squareSize={50}

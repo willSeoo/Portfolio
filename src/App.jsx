@@ -1,14 +1,16 @@
 import React from "react";
 import Hero from "./sections/Hero";
 import Text from "./sections/text";
-import Project from "./sections/Project";
+import Projects from "./components/Projects";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <div>
+      <Navbar />
       <Hero />
       <Text />
-      <Project />
+      <Projects />
     </div>
   );
 };

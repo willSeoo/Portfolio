@@ -7,6 +7,9 @@ import HeroExperience from "../components/HeroModels/HeroExperience.jsx";
 import { FlipWords } from "../components/FlipWords.jsx";
 import { motion } from "framer-motion";
 import Background from "../components/Background.jsx";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+
 
 const Hero = () => {
   const kata = ["Secure", "Modern", "Scalable"];
@@ -14,6 +17,23 @@ const Hero = () => {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0 },
   };
+
+  useGSAP(() => {
+    gsap.fromTo('.hero-text h1',
+       { 
+        y: 50 ,
+        opacity: 0,
+
+       },
+       {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power2.inOut", 
+       }
+      )
+  })
 
   return (
     <section id="hero" className="relative overflow-hidden">
@@ -24,10 +44,10 @@ const Hero = () => {
       </div>
       
       {/* ⁡⁢⁣⁢Mobile View⁡ */}
-      <div className="z-20 mt-20 text-center md:h-[25vh] lg:h-[40vh] md:mt-30 h-[30vh] rounded-3xl bg-clip-text hidden max-[1250px]:block relative">
+      <div className="z-20 mt-20 text-center md:h-[45vh] lg:h-[50vh] md:mt-30 h-[65vh] rounded-3xl bg-clip-text hidden max-[1280px]:block relative">
         <div className="flex flex-col space-y-6 relative z-20">
           <motion.p
-            className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-medium"
+            className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-medium mt-40 md:mt-15"
             variants={variants}
             initial="hidden"
             animate="visible"
@@ -73,9 +93,9 @@ const Hero = () => {
       </div>
       
       ⁡⁢⁣⁢ {/* DESKTOP VIEW */}⁡
-      <div className="hero-layout hidden min-[1250px]:flex flex-col justify-center items-center ">
+      <div className="hero-layout hidden min-[1280px]:flex flex-col justify-center items-center ">
         {/* Left side hero content */}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5 custom-ml">
           <div className="flex flex-col gap-7 ">
             <div className="hero-text">
               <h1>
@@ -111,9 +131,10 @@ const Hero = () => {
               text="See my Work"
             />
           </div>
+          
         </header>
         ⁡⁢⁣⁢{/* Right Side Landyard*/}⁡
-        <div className="hero-3d-layout hidden custom-lg xl:left-129">
+        <div className="hero-3d-layout hidden custom-lg xl:left-129 custom-leftLandyard">
           <Lanyard position={[0, 0, 12.6]} gravity={[0, -46.6, 0]} />
         </div>
       </div>
