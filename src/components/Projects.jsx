@@ -8,7 +8,7 @@ const Projects = () => {
         A small selection of my
         <span className='text-[#D3E674]'>recent projects</span>
       </h2>
-
+    {/* DUMMY COMMENT */}
     {/* ⁡⁣⁣⁢NEED TO CREATE THE FILE AND MAKE THE OBJECT SO WE COULD USE IT HERE ⁡*/}
       <div className='flex flex-wrap items-center justify-center padding-4 gap-16 mt-10'>
         {RecentProject.map(({title, des, img, iconLists, link}) => (
