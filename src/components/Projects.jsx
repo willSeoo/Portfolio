@@ -14,6 +14,7 @@ const Projects = () => {
         {RecentProject.map(({title, des, img, iconLists, link}) => (
           <div className='lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]' >
           {title}
+          {title}
           </div>
         ))}
       </div>
